@@ -25,6 +25,25 @@ export class PostsService {
     const res = await this.conn.query('SELECT * FROM post');
     return res.rows;
   }
+  async updateOne(id, post: IPost) {
+    /*
+      Update one post matching the id in database
+    */
+    const { title, description, img } = post;
+
+    const res = await this.conn.query(
+      `
+      UPDATE Post
+        SET title = $1,
+        description = $2,
+        img = $3
+        WHERE id = '${id}'
+     `,
+      [title, description, img],
+    );
+    return res;
+  }
+
   async deleteOne(id) {
     /*
       Delete one post matching the id in database

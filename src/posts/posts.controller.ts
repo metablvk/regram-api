@@ -27,6 +27,13 @@ export class PostsController {
   async findOne(@Param('id') id: string) {
     return this.postsService.findOne(id);
   }
+  @Put(':id')
+  async updateOne(
+    @Param('id') id: string,
+    @Body() updatedPostDto: UpdatePostDto,
+  ) {
+    return this.postsService.updateOne(id, updatedPostDto);
+  }
   @Delete(':id')
   async remove(@Param('id') id: number) {
     return this.postsService.deleteOne(id);
