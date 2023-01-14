@@ -38,8 +38,4 @@ export class PostsController {
   async remove(@Param('id') id: number) {
     return this.postsService.deleteOne(id);
   }
-  // @Put(':id')
-  // update(@Param('id') id: string) {
-  //   return `This action updates a #${id} post`;
-  // }
 }
