@@ -9,7 +9,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CreatePostDto, UpdatePostDto, ListAllEntries } from './dto/post.dto';
-import { PostsService } from './posts.services';
+import { PostsService } from './posts.service';
 import { IPost } from './interfaces/post.interface';
 
 @Controller('posts')
